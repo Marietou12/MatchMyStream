@@ -14,7 +14,7 @@ def background():
     <style>
     /* Fond global pour l'application */
     .stApp {
-        background-image: url("https://wallpaperaccess.com/full/3988284.jpg");
+        background-image: url("poster_film");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
