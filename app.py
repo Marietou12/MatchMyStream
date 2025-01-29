@@ -534,7 +534,7 @@ st.markdown("""
     }
     </style>
     <div class="footer">
-        🚀 Créé par <strong>Ton Nom</strong> | 🌐 <a href="https://github.com/Marietou12" style="color: lightblue;" target="_blank">GitHub</a> | © 2025
+        🚀 Créé par <strong>Mariétou N</strong> | 🌐 <a href="https://github.com/Marietou12" style="color: lightblue;" target="_blank">GitHub</a> | © 2025
     </div>
     """, unsafe_allow_html=True)
 
