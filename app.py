@@ -33,7 +33,30 @@ def background():
      }
     </style>
     """, unsafe_allow_html=True)
+def background_series():
+    st.markdown("""
+    <style>
+    /* Fond global pour l'application */
+    .stApp {
+        background-image: url("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_series.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 
+    /* Ciblage des widgets (conteneur principal) */
+    div.block-container {
+        background: rgba(0, 0, 0, 0.85); /* Transparence blanche */
+        border-radius: 15px; /* Coins arrondis */
+        padding: 20px; /* Espacement interne */
+                }
+                
+    div.data-v-5af006b8{
+                 border-radius: 15px;
+                }
+     }
+    </style>
+    """, unsafe_allow_html=True)
 def center_content():
     st.markdown("""
     <style>
@@ -287,7 +310,7 @@ with tab1:
 
     elif selection == "Ma liste":
         # Affichage des films vus
-        st.title("Films déjà vus")
+        st.title("Films à voir")
         
         # Si la liste des films vus contient des films
         film_utils.afficher_ma_liste(df_movies)
@@ -296,6 +319,7 @@ with tab1:
         st.write("Vous êtes déconnecté.")
 
 with tab2:
+    background_series()
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")       
