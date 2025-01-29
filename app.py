@@ -121,7 +121,7 @@ with st.sidebar:
         }
     )
 with tab1:
-        
+    background()  
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")
