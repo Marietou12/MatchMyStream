@@ -6,8 +6,8 @@ import series_utils
 import data
 
 
-df_movies = data.load_data("C:\\Users\\ndmar\\OneDrive\\Documents\\Portfolio\\MatchMyStream\\MatchMyStream\\df_films.csv", index_col=None)
-df_series = data.load_data("C:\\Users\\ndmar\\OneDrive\\Documents\\Portfolio\\MatchMyStream\\MatchMyStream\\df_series.csv")
+df_movies = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_films.csv", index_col=None)
+df_series = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_series.csv")
 
 def background():
     st.markdown("""
