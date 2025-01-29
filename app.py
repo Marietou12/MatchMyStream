@@ -518,3 +518,23 @@ with tab2:
         
         # Si la liste des séries vus contient des séries
         series_utils.afficher_ma_liste(df_series)
+        
+st.markdown("""
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    </style>
+    <div class="footer">
+        🚀 Créé par <strong>Ton Nom</strong> | 🌐 <a href="https://github.com/Marietou12" style="color: lightblue;" target="_blank">GitHub</a> | © 2025
+    </div>
+    """, unsafe_allow_html=True)
+
