@@ -103,7 +103,7 @@ with tab1:
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")
 
-        query = st.text_input("Recommandation pas titre, personne ou genre",key='queury film') 
+        query = st.text_input("Recommandation par titre, personne ou genre",key='queury film') 
         
 
 
@@ -302,7 +302,7 @@ with tab2:
         st.markdown("#### L'IA au service de vos soirées chill !")       
 
 
-        query = st.text_input("Recommandation pas titre, personne ou genre", key='queury series')  # Ajout d'une clé unique
+        query = st.text_input("Recommandation par titre, personne ou genre", key='queury series')  # Ajout d'une clé unique
         if query:
             # Appeler la fonction de recommandation avec les mots-clés et les données des films
             results = series_utils.recommend_series_keyword(df_series, query, n_neighbors=10, threshold_distance=0.9, stopwords=None)
