@@ -9,12 +9,11 @@ import data
 df_movies = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_films.csv", index_col=None)
 df_series = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_series.csv")
 
-def background():
+def background(image_url):
     st.markdown("""
     <style>
-    /* Fond global pour l'application */
-    .stApp {
-        background-image: url("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_film.jpg");
+    .stApp {{
+        background-image: url("{image_url}");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -60,7 +59,6 @@ if 'viewed_movies' not in st.session_state:
 if 'viewed_series' not in st.session_state:
     st.session_state['viewed_series'] = []
 
-background()
 
 center_content()
 st.markdown("""
@@ -98,6 +96,8 @@ with st.sidebar:
         }
     )
 with tab1:
+    background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_film.jpg")
+
 
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
@@ -140,7 +140,7 @@ with tab1:
             for j, (_, row) in enumerate(random_movies.iloc[i * films_per_line:(i + 1) * films_per_line].iterrows()):
                 with cols[j]: 
                     
-                    tooltip_html = f"""
+                    tooltip_html = """
                     <div class="tooltip" style="text-align: center; position: relative; display: inline-block;">
                         <img src="{row['poster_path']}" alt="{row['title_y']}" style="width: 80%; border-radius: 8px; cursor: pointer;">
                         <span class="tooltiptext">{row['overview']}</span>
@@ -296,7 +296,8 @@ with tab1:
         st.write("Vous êtes déconnecté.")
 
 with tab2:
- 
+ background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_series.jpg")
+
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")       
