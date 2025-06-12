@@ -9,11 +9,12 @@ import data
 df_movies = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_films.csv", index_col=None)
 df_series = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_series.csv")
 
-def background(image_url):
+def background():
     st.markdown("""
     <style>
-    .stApp {{
-        background-image: url("{image_url}");
+    /* Fond global pour l'application */
+    .stApp {
+        background-image: url("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_film.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -59,6 +60,7 @@ if 'viewed_movies' not in st.session_state:
 if 'viewed_series' not in st.session_state:
     st.session_state['viewed_series'] = []
 
+background()
 
 center_content()
 st.markdown("""
@@ -96,8 +98,6 @@ with st.sidebar:
         }
     )
 with tab1:
-    background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_film.jpg")
-
 
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
@@ -296,9 +296,8 @@ with tab1:
         st.write("Vous êtes déconnecté.")
 
 with tab2:
- background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_series.jpg")
-
-if selection == "Accueil":
+ 
+    if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")       
 
@@ -394,7 +393,7 @@ if selection == "Accueil":
                 st.markdown("<hr style='border: 1px solid #444;'>", unsafe_allow_html=True)
 
 
-elif selection == "Recommendation par envies":
+    elif selection == "Recommendation par envies":
         st.title("Recommandation de series selon vos envies")
 
 
@@ -495,7 +494,8 @@ elif selection == "Recommendation par envies":
         else:
             st.write("Aucune série ne correspond à vos critères.")
 
-elif selection == "Top 10":
+
+    elif selection == "Top 10":
         st.title("Top 10 des meilleurs séries")
         st.subheader("Choisissez un genre pour découvrir les meilleurs séries du genre")
 
@@ -512,7 +512,7 @@ elif selection == "Top 10":
         else:
             st.write("Veuillez sélectionner un genre pour voir les recommandations.")
 
-elif selection == "Ma liste":
+    elif selection == "Ma liste":
         # Affichage des séries vus
         st.title("Séries dans votre liste")
         
@@ -537,4 +537,3 @@ st.markdown("""
         🚀 Créé par <strong>Mariétou N</strong> | 🌐 <a href="https://github.com/Marietou12" style="color: lightblue;" target="_blank">GitHub</a> | © 2025
     </div>
     """, unsafe_allow_html=True)
-
