@@ -512,7 +512,7 @@ elif selection == "Top 10":
         else:
             st.write("Veuillez sélectionner un genre pour voir les recommandations.")
 
-    elif selection == "Ma liste":
+elif selection == "Ma liste":
         # Affichage des séries vus
         st.title("Séries dans votre liste")
         
