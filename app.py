@@ -298,7 +298,7 @@ with tab1:
 with tab2:
  background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_series.jpg")
 
-    if selection == "Accueil":
+if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")       
 
