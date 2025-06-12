@@ -140,7 +140,7 @@ with tab1:
             for j, (_, row) in enumerate(random_movies.iloc[i * films_per_line:(i + 1) * films_per_line].iterrows()):
                 with cols[j]: 
                     
-                    tooltip_html = """
+                    tooltip_html = f"""
                     <div class="tooltip" style="text-align: center; position: relative; display: inline-block;">
                         <img src="{row['poster_path']}" alt="{row['title_y']}" style="width: 80%; border-radius: 8px; cursor: pointer;">
                         <span class="tooltiptext">{row['overview']}</span>
@@ -342,7 +342,7 @@ with tab2:
             cols = st.columns(series_per_line)  # Crée 4 colonnes par ligne
             for j, (_, row) in enumerate(random_series.iloc[i * series_per_line:(i + 1) * series_per_line].iterrows()):
                 with cols[j]:  # Afficher chaque série dans une colonne
-                    tooltip_html = """
+                    tooltip_html = f"""
                     <div class="tooltip" style="text-align: center; position: relative; display: inline-block;">
                         <img src="{row['poster_path']}" alt="{row['name']}" style="width: 80%; border-radius: 8px; cursor: pointer;">
                         <span class="tooltiptext">{row['overview']}</span>
