@@ -343,7 +343,7 @@ if selection == "Accueil":
             cols = st.columns(series_per_line)  # Crée 4 colonnes par ligne
             for j, (_, row) in enumerate(random_series.iloc[i * series_per_line:(i + 1) * series_per_line].iterrows()):
                 with cols[j]:  # Afficher chaque série dans une colonne
-                    tooltip_html = f"""
+                    tooltip_html = """
                     <div class="tooltip" style="text-align: center; position: relative; display: inline-block;">
                         <img src="{row['poster_path']}" alt="{row['name']}" style="width: 80%; border-radius: 8px; cursor: pointer;">
                         <span class="tooltiptext">{row['overview']}</span>
@@ -394,7 +394,7 @@ if selection == "Accueil":
                 st.markdown("<hr style='border: 1px solid #444;'>", unsafe_allow_html=True)
 
 
-    elif selection == "Recommendation par envies":
+elif selection == "Recommendation par envies":
         st.title("Recommandation de series selon vos envies")
 
 
@@ -495,8 +495,7 @@ if selection == "Accueil":
         else:
             st.write("Aucune série ne correspond à vos critères.")
 
-
-    elif selection == "Top 10":
+elif selection == "Top 10":
         st.title("Top 10 des meilleurs séries")
         st.subheader("Choisissez un genre pour découvrir les meilleurs séries du genre")
 
