@@ -9,21 +9,28 @@ import data
 df_movies = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_films.csv", index_col=None)
 df_series = data.load_data("https://raw.githubusercontent.com/Marietou12/MatchMyStream/refs/heads/main/df_series.csv")
 
-def background(image_url):
-    st.markdown(f"""
+def background():
+    st.markdown("""
     <style>
-    .stApp {{
-        background-image: url("{image_url}");
+    /* Fond global pour l'application */
+    .stApp {
+        background-image: url("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_film.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-    }}
+    }
 
-    div.block-container {{
-        background: rgba(0, 0, 0, 0.85);
-        border-radius: 15px;
-        padding: 20px;
-    }}
+    /* Ciblage des widgets (conteneur principal) */
+    div.block-container {
+        background: rgba(0, 0, 0, 0.85); /* Transparence blanche */
+        border-radius: 15px; /* Coins arrondis */
+        padding: 20px; /* Espacement interne */
+                }
+                
+    div.data-v-5af006b8{
+                 border-radius: 15px;
+                }
+     }
     </style>
     """, unsafe_allow_html=True)
 
@@ -91,8 +98,6 @@ with st.sidebar:
         }
     )
 with tab1:
-    background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_film.jpg")
-
 
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
@@ -291,8 +296,7 @@ with tab1:
         st.write("Vous êtes déconnecté.")
 
 with tab2:
-    background("https://raw.githubusercontent.com/Marietou12/MatchMyStream/main/poster_series.jpg")
-
+ 
     if selection == "Accueil":
         st.title("Bienvenue sur MatchMyStream !")
         st.markdown("#### L'IA au service de vos soirées chill !")       
